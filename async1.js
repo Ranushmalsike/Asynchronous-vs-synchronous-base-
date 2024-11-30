@@ -1,9 +1,13 @@
 console.log('start');
-function hello() {
-    console.log('ok function work');
+function hello(item, callback) {
+    setTimeout(() => {
+        callback({item:[1, 2, 3, 4]});
+    }, 2000);
     
 };
-const hello_v = new hello();
-//console.log(hello_v);
+// this callback word change your like name
+const helloV = hello(1, callback => {
+console.log(callback);
+});
 
 console.log('end');
